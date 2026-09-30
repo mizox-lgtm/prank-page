@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>رسالة سرية</title>
+
+    <style>
+        body {
+            background: black;
+            color: #00ff00;
+            font-family: monospace;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        button {
+            background: #00ff00;
+            color: black;
+            border: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #message {
+            display: none;
+            margin-top: 30px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🔐 رسالة سرية</h1>
+
+    <p>عندك رسالة خاصة...</p>
+
+    <button onclick="showMessage()">فتح الرسالة</button>
+
+    <div id="message">
+        😂😂 تْشدّيتي صاحبي!<br><br>
+        غير PRANK 🤣
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
