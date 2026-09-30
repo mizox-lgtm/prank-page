@@ -1,53 +1,100 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>رسالة سرية</title>
+<meta charset="UTF-8">
+<title>WARNING</title>
 
-    <style>
-        body {
-            background: black;
-            color: #00ff00;
-            font-family: monospace;
-            text-align: center;
-            padding-top: 100px;
-        }
+<style>
+body {
+    margin: 0;
+    background: #000;
+    color: red;
+    font-family: monospace;
+    text-align: center;
+    overflow: hidden;
+}
 
-        button {
-            background: #00ff00;
-            color: black;
-            border: none;
-            padding: 15px 30px;
-            font-size: 20px;
-            cursor: pointer;
-        }
+#screen {
+    padding-top: 25vh;
+}
 
-        #message {
-            display: none;
-            margin-top: 30px;
-            font-size: 24px;
-        }
-    </style>
+h1 {
+    font-size: 45px;
+    animation: blink 0.4s infinite;
+}
+
+#msg {
+    font-size: 22px;
+    margin: 30px;
+}
+
+button {
+    background: red;
+    color: white;
+    border: 0;
+    padding: 18px 35px;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.shake {
+    animation: shake 0.08s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(3px, 3px); }
+    25% { transform: translate(-3px, -3px); }
+    50% { transform: translate(3px, -3px); }
+    75% { transform: translate(-3px, 3px); }
+}
+</style>
 </head>
 
 <body>
 
-    <h1>🔐 رسالة سرية</h1>
+<div id="screen">
 
-    <p>عندك رسالة خاصة...</p>
+<h1>⚠ WARNING ⚠</h1>
 
-    <button onclick="showMessage()">فتح الرسالة</button>
+<div id="msg">
+SYSTEM ERROR DETECTED
+</div>
 
-    <div id="message">
-        😂😂 تْشدّيتي صاحبي!<br><br>
-        غير PRANK 🤣
-    </div>
+<button onclick="start()">CHECK NOW</button>
 
-    <script>
-        function showMessage() {
-            document.getElementById("message").style.display = "block";
-        }
-    </script>
+</div>
+
+<script>
+function start() {
+
+    document.body.classList.add("shake");
+
+    document.getElementById("msg").innerHTML =
+    "SCANNING DEVICE...<br><br>██████████ 100%";
+
+    setTimeout(() => {
+
+        document.body.classList.remove("shake");
+
+        document.getElementById("screen").innerHTML = `
+        <h1>😂 GOT YOU!</h1>
+        <div id="msg">
+        راه غير PRANK 🤣<br><br>
+        ما تدار حتى حاجة فالتليفون ديالك.
+        </div>
+        `;
+
+    }, 3000);
+}
+</script>
 
 </body>
 </html>
